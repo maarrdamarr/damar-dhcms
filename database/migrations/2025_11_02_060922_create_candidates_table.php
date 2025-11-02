@@ -9,7 +9,8 @@ return new class extends Migration {
     {
         Schema::create('candidates', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('job_id')->constrained()->cascadeOnDelete();
+            // ganti ini
+            $table->foreignId('hr_job_id')->constrained('hr_jobs')->cascadeOnDelete();
             $table->string('name');
             $table->string('email');
             $table->string('phone')->nullable();
