@@ -16,7 +16,7 @@ class DhcmsSeeder extends Seeder
                 'name' => 'Super Admin',
                 'password' => Hash::make('password'),
                 'role' => 'admin',
-                'phone' => '081234567890'
+                'phone' => '081234567890',
             ]
         );
 
