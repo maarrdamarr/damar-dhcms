@@ -1,26 +1,21 @@
-@extends('layouts.app', ['title' => 'Dashboard Manager'])
+@extends('layouts.app', ['title' => 'Dashboard Karyawan'])
 
 @section('content')
-<h3 class="mb-3">Dashboard Manager</h3>
-
+<h3 class="mb-3">Dashboard Karyawan</h3>
 <div class="row g-3">
-    <div class="col-md-4">
-        <div class="card border-0 shadow-sm">
-            <div class="card-body">
-                <h6 class="mb-1">Approval Cuti</h6>
-                <p class="text-muted mb-2">Lihat pengajuan karyawan mu.</p>
-                <a href="{{ route('manager.approvals') }}" class="btn btn-sm btn-primary">Lihat</a>
-            </div>
-        </div>
+  <div class="col-md-3">
+    <div class="mini-card" style="border-left:4px solid var(--role-color);">
+      <div class="small text-muted">Absensi</div>
+      <div class="fs-5 fw-semibold">Hari ini</div>
+      <a href="{{ route('employee.attendance') }}" class="small text-decoration-underline">Isi absensi</a>
     </div>
-    <div class="col-md-4">
-        <div class="card border-0 shadow-sm">
-            <div class="card-body">
-                <h6 class="mb-1">Tim</h6>
-                <p class="text-muted mb-2">Daftar anggota tim.</p>
-                <a href="{{ route('manager.team') }}" class="btn btn-sm btn-outline-secondary">Lihat</a>
-            </div>
-        </div>
+  </div>
+  <div class="col-md-3">
+    <div class="mini-card">
+      <div class="small text-muted">Cuti</div>
+      <div class="fs-5 fw-semibold">Ajukan Cuti</div>
+      <a href="{{ route('employee.leaves') }}" class="small text-decoration-underline">Lihat pengajuan</a>
     </div>
+  </div>
 </div>
 @endsection

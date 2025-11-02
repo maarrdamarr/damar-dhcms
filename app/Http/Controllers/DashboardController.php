@@ -1,14 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
     public function index()
     {
-        $user = auth::user();
+        $user = Auth::user();
+
+        if (! $user) {
+            return redirect()->route('login');
+        }
 
         return match ($user->role) {
             'admin'   => view('admin.dashboard', compact('user')),
