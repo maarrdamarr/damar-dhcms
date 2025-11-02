@@ -3,10 +3,7 @@
 namespace App\Http\Controllers\Employee;
 
 use App\Http\Controllers\RoleController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
-
 
 class ProfileController extends RoleController
 {
@@ -14,7 +11,7 @@ class ProfileController extends RoleController
 
     public function index()
     {
-        $user = auth::user();
+        $user = Auth::user();
         return view('employee.profile', compact('user'));
     }
 }
